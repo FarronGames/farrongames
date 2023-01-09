@@ -1,0 +1,71 @@
+// COLORES COORPORATIVOS
+
+$rojo: #ef4d48;
+$blanco: #fff;
+$negro: #000;
+$colortexto: #111111;
+
+//FUENTES
+
+$fuente: 'Quicksand', sans-serif;
+
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: sans-serif;
+    font-weight: 500;
+    src: url(/fonts/Quicksand.ttf) format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Paytone One';
+    font-style: sans-serif;
+    font-weight: 500;
+    src: url(/fonts/PaytoneOne.ttf) format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: sans-serif;
+    font-weight: 500;
+    src: url(/fonts/Poppins-Regular.ttf) format('ttf');
+  }
+
+  .slider-content{
+    h1{
+      font-family: 'Paytone One', sans-serif !important;
+    }
+
+    p{
+      font-family: 'Poppins', sans-serif !important;
+      line-height: 1.68;
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+  
+
+
+
+
+
+// ESTILOS GENERALES
+
+html {
+  width: 100vw !important;
+}
+
+body{
+  margin: 0;
+  background-color: #FDFDFD;
+}
+
+h1,h2,h3,h4,h5,h6,span,a,li,label,p{
+    color: $colortexto;
+    font-family: $fuente;
+}
+
+
+
+
+

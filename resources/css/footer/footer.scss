@@ -1,0 +1,107 @@
+// GENERAL
+
+footer{
+    width: 100%;
+    background-color: #ef4d48;
+    
+    .footer-contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 35px;
+
+        .footer-logo{
+            width: 250px;
+        }
+    
+        .footer-menu{
+
+            ul{
+                display: flex;
+                margin: 30px 0;
+
+                li{
+                    list-style: none;
+                    text-align: center;
+                    padding: 0 10px;
+                    border-right: 1px solid #fff;
+
+                    a{
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: #fff;
+                        font-weight: 600;
+                    }
+                }
+
+                li:last-child{
+                    border-right: 0;
+                }
+            }
+    
+        }
+    
+        .footer-redes{
+            svg{
+                width: 30px;
+                color: #fff;
+                padding: 3px;
+                border: 2px solid #fff;
+                border-radius: 200px 200px 200px 200px;
+                -moz-border-radius: 200px 200px 200px 200px;
+                -webkit-border-radius: 200px 200px 200px 200px;
+            }
+        }
+    
+        .footer-copy{
+            padding: 15px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 0 10px;
+
+            p, span{
+                color: #fff;
+            }
+        }
+
+        hr{
+            width: 70%;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+    }  
+    
+}
+
+
+// MOBILE
+
+@media (max-width: 768px) {
+   footer{
+    .footer-menu{
+        ul{
+            flex-direction: column;
+            align-items: center;
+            gap: 5px 0;
+            padding: 0;
+
+            li{
+                border-right: 0 !important;
+            }
+        }
+    }
+
+    .footer-copy{
+        padding: 0;
+        flex-direction: column;
+        align-items: center !important;
+        gap: 5px 0;
+
+        p{
+            text-align: center;
+            margin: 0;
+            margin-bottom: 5px;
+        }    
+    }
+   }
+}

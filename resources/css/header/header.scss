@@ -1,0 +1,610 @@
+
+// ESCRITORIO
+
+header{
+    height: 100px;
+    background-color: #ef4d48;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // border-bottom: 2px solid #FFF;
+
+    &.nav--open{
+        .menu{
+            >div.enlaces{
+                display: flex;
+            }
+        }
+    }
+
+    .logo{
+        img{
+            width: 250px;
+        }
+    }
+
+    .menu{
+
+        >div.enlaces{
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            >div{
+                list-style: none;
+                height: 100%;
+                
+                >div{
+                    display: flex;
+                    align-items: baseline;
+                }
+
+                a{
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 20px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        font-family: 'Paytone One', sans-serif;
+                        height: 100%;
+                        line-height: 100px;
+                        display: flex;
+                        padding: 0px 20px;
+                }
+
+              
+
+                .bi{
+                    color: #fff;
+                }
+
+                
+            }
+
+            div.categorias{
+              display: flex;
+
+                >div {
+                    position: relative;
+                    // width: 225px;
+                    
+                    >a svg{
+                      display: none;
+                    }
+                    
+                    .enlace-inicio{
+                      display: none;
+                    }
+
+                    &:hover{
+
+                      >a{
+                          opacity: .8;
+                      }
+
+                    }
+                }
+
+                .enlace-categorias:hover{
+                  
+                  ul{
+                    display: block !important;
+                  }
+                    
+                }
+
+                
+            }
+
+            .footer-menumobile{
+              opacity: 0;
+            }
+        }
+
+        .submenu{
+            display: none;
+            background-color: #fff;
+            margin-top: -10px;
+            border: 1px solid rgba(0,0,0,.15);
+            background-clip: padding-box;
+            border-radius: 0.25rem;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            top: 90px;
+            width: 100%;
+            z-index: 1;
+            
+
+            li{
+                list-style: none;
+                height: 50px;
+                display: flex;
+                padding-left: 20px;
+
+                &:hover{
+                    background-color: #f5f5f5;
+                }
+
+                a{
+                    color: #111111 !important;
+                    line-height: initial;
+                    height: initial;
+                    padding: 0px 10px !important;
+                    width: 100%;
+                    height: initial !important;
+                    line-height: initial !important;
+                    font-family: 'Quicksand', sans-serif !important;
+
+                    &:hover{
+                        color: #ef4d48;
+                    }
+                }
+
+                svg{
+                    width: 40px;
+                    color: #ef4d48 !important;
+                    position: initial;
+                }
+            }
+           
+        }
+        
+    }
+}
+
+
+// ESCRITORIO
+
+@media (min-width: 768px) {
+
+  header{
+
+    .menu{
+
+      .submenu{
+
+        li{
+            align-items: center;
+
+          a{
+            height: 100% !important;
+            line-height: 50px !important;
+          }
+        }
+
+        li:first-child{
+          margin-top: 10px;
+        }
+       
+    }
+
+
+        .hamburguesa{
+          display: none;
+        }
+        
+    }
+  }
+}
+
+// MOBILE
+
+@media (max-width: 768px) {
+
+  header{
+    justify-content: flex-start;
+    position: relative;
+    position: fixed !important;
+    top: 0;
+    z-index: 1;
+
+
+    .logo{
+      margin-left: 15px;
+      z-index: 15;
+
+      img{
+          width: 200px;
+      }
+    }
+
+    .menu{
+      
+        >div.enlaces{ 
+          display: none;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100vh;
+          flex-direction: column;
+          padding: 0;
+          margin: 0;
+          justify-content: center;
+          z-index: 20;
+
+          >div{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            &:hover{
+
+              a,svg{
+                  opacity: 1;
+              }
+              
+            }
+
+            a{
+              line-height: initial;
+              padding: 5px 0px;
+              height: auto;
+              font-size: 32px;
+            }
+          }
+
+          div.categorias{
+            flex-direction: column;
+            align-items: center;
+
+            >div{
+              width: auto;
+              align-items: center;
+              flex-direction: column;
+              overflow: hidden;
+
+              a{
+                margin-bottom: -55px;
+              }
+
+              svg{
+                width: 30px;
+                color: #fff;
+                display: block !important;
+                margin-bottom: 2px;
+              }
+
+              &:hover{
+
+                >a{
+                    opacity: 1 !important;
+                }
+
+              }
+
+              &.animacionmenu{
+
+                a{
+                  animation-delay: .5s;
+                  animation-duration: 1s;
+                  animation-name: animacionmenu;
+                  animation-fill-mode: forwards;
+                }
+                
+              }
+
+            }
+
+            .rotate{
+              a svg{
+                transform: rotate(180deg);
+                transition: all 0.5s ease;
+              }
+            }
+
+            .submenu{
+              margin-top: 0;
+              background-color: #ef4d48;
+              border: 0;
+              display: initial;
+              overflow: hidden;
+              position: initial !important;
+              min-width: max-content;
+              max-height: 0;
+              transition: max-height 1s;
+
+              li{
+                justify-content: center;
+                width: auto;
+                height: 40px;
+
+                &:hover{
+                  background-color: initial;
+                }
+
+                a{
+                  padding: 0 10px;
+                  width: auto;
+                  color: #fff !important;
+                  font-size: 25px;
+
+                  &:hover{
+                    color: #fff;
+                  }
+                }
+                svg{
+                  position: initial;
+                  color: #fff !important;
+                }
+              }
+            }
+
+            .animate{
+              height: 0;
+            }
+            
+          }
+
+          .enlace-inicio{
+            display: flex !important;
+          }
+
+          .footer-menumobile{
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+
+            img{
+              max-width: 200px;
+              padding: 10px 0;
+              padding-bottom: 15px;
+            }
+
+            .linea-header{
+              border-top: 3px solid #fff;
+              opacity: .4;
+              width: 80%;
+            }
+          }
+
+        }
+
+        @keyframes animacionmenu {
+          from {
+            margin-bottom: -55px;
+          }
+        
+          to {
+            margin-bottom: 0px;
+          }
+        }
+
+        .hamburguesa{
+          .nav__toggle{
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            z-index: 20;
+          }
+        }
+        
+    }
+  }
+
+  .slideDown{
+    max-height: 600px !important;
+  }
+
+
+
+}
+
+.desactivar-scroll{
+  overflow: hidden;
+}
+
+
+
+
+
+
+// ---------------------------
+//    ANIMACIÓN MENÚ MOBILE
+// ---------------------------
+  
+  // calculate a circle's circumference based on radius
+  @function circumference($r){
+    $pi: 3.141592653;
+    @return 2*$pi*$r;
+  }
+  
+  
+  // ---------------------------
+  // Main Navigation Menu
+  // ---------------------------
+  
+  .nav {
+    
+    // Toggle Button
+    &__toggle {
+      display:inline-block;
+      position:absolute;
+      z-index:10;
+      padding:0;
+      border:0;
+      background:transparent;
+      outline:0;
+      right:15px;
+      top:15px;
+      cursor:pointer;
+    }
+    
+    &__menu {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      height:var(--screen-height);
+      position:relative;
+      z-index:5;
+      visibility:hidden;
+    }
+    
+    &__link {
+      color:white;
+      display:block;
+      text-align:center;
+      text-transform:uppercase;
+      letter-spacing:5px;
+      font-size:1.25rem;
+      text-decoration:none;
+      padding:1rem;
+      
+      &:hover,
+      &:focus {
+        outline:0;
+        background-color:rgba(0,0,0,0.2);
+      }
+    }
+  }
+  
+  
+  // ---------------------------
+  // SVG Menu Icon
+  // ---------------------------
+
+    .menuicon {
+      display:block;
+      cursor:pointer;
+      color: white;
+      
+      transform:rotate(0deg);
+      transition: .3s cubic-bezier(0.165, 0.840, 0.440, 1.000); 
+      
+      
+      &__bar,
+      &__circle {
+        fill:none;
+        stroke: currentColor;
+        stroke-width:3;
+        stroke-linecap:round;
+      }
+      &__bar {
+        transform: rotate(0deg);
+        transform-origin:50% 50%;
+        transition: transform .25s ease-in-out;
+      }
+
+      &__circle{
+        stroke-dashoffset:circumference(23); // 23 is the <circle>'s radius
+        stroke-dasharray:circumference(23);
+      }
+     
+    }
+  
+    .init .menuicon__circle {
+      transition: stroke-dashoffset .3s linear .1s;
+      stroke-dashoffset:circumference(23); // 23 is the <circle>'s radius
+      stroke-dasharray:circumference(23);
+    }
+
+  
+  // ---------------------------
+  // Circular Splash Background
+  // ---------------------------
+  
+
+    .splash {
+      display: initial !important;
+      position:absolute;
+      top:0px;
+      right:0;
+      
+      z-index: 10;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 100vh;
+      }
+      
+      
+      &::after {
+        content:"";
+        display:block;
+        position:absolute;
+        border-radius:50%;
+        background-color: #ef4d48;
+        
+        // screen diameter can be 142vmax at most,
+        // circle needs to be twice that size to cover it
+        width:284vmax;
+        height:284vmax;
+        top:-142vmax;
+        right:-142vmax;
+        
+        transform: scale(0);
+        transform-origin:50% 50%;
+        transition: transform 0.4s cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        
+      }
+    }
+  
+  
+  
+  
+  // ---------------------------
+  // Active State
+  // ---------------------------
+  
+  .nav:target,
+  .nav--open {
+    
+    //scale the background circle to full size
+    > .splash::after {
+      transform:scale(1);
+    }
+
+    .logo{
+      z-index: 0 !important;
+    }
+    
+    //animate the menu icon
+    .menuicon {
+      color:white;
+      transform:rotate(180deg);
+      
+      &__circle {
+        stroke-dashoffset:0;
+      }
+      &__bar:nth-child(1),
+      &__bar:nth-child(4) {
+        opacity:0;
+      }
+      &__bar:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      &__bar:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .footer-menumobile{
+      animation-delay: 1s;
+      animation-duration: 1s;
+      animation-name: animacionfadein;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes animacionfadein {
+      from {
+        opacity: 0;
+      }
+    
+      to {
+        opacity: 1;
+      }
+    }
+
+  }
+
+
+
